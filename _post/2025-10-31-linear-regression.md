@@ -1,5 +1,5 @@
 ---
-title: "Linear Regression"
+title: "Linear Regression made simple"
 layout: single
 date: 2025-10-31
 ---
