@@ -1,6 +1,7 @@
 ---
 layout: single
 permalink: /
+show_title: false
 ---
 
 ##  Presentation
