@@ -9,7 +9,7 @@ description: "This is a blog about ML/AI topics. It is my way to learn, better u
 future: true
 
 # -- Theme Settings --
-remote_theme: "mmistakes/minimal-mistakes@4.24.0" # This specifies the theme
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-remote-theme  # <-- ADD THIS LINE
   - jekyll-include-cache
