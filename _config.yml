@@ -1,10 +1,5 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that.
-
 # -- Site Settings --
-title: Diego Andres Barbosa Trujillo ML/AI Blog        # The title of your site.
+title: ML/AI Blog
 description: "This is a blog about ML/AI topics. It is my way to learn, better understand, and discuss machine learning and artificial intelligence."
 future: true
 
