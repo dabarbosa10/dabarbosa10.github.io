@@ -9,10 +9,13 @@ description: "This is a blog about ML/AI topics. It is my way to learn, better u
 future: true
 
 # -- Theme Settings --
+# This tells Jekyll the *name* of the theme to use
 theme: minimal-mistakes-jekyll
+
+# This tells Jekyll which *plugins* to load from your Gemfile
 plugins:
-  - jekyll-remote-theme  # <-- ADD THIS LINE
-  - jekyll-include-cache
+  - minimal-mistakes-jekyll  # <-- This is the crucial line we were missing
+  - jekyll-include-cache     # This is the theme's dependency
 
 # -- Navigation Links --
 main:
