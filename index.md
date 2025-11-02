@@ -6,7 +6,7 @@ show_title: false
 ---
 
 ##  Presentation
-![Profile](/assets/img/my_profile.jpg)
+![Profile](/assets/img/my_profile.jpg){:width="220" .profile-pic}
 
 Hello! 
 
