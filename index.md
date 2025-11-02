@@ -1,5 +1,6 @@
 ---
-layout: single
+layout: default
+title: "Home"
 permalink: /
 show_title: false
 ---

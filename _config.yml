@@ -1,27 +1,9 @@
-title: "Your Name"
+title: "Diego Andrés Barbosa Trujillo"
 description: "Portfolio and AI/ML blog"
-url: "https://YOUR_GITHUB_USERNAME.github.io"
-baseurl: ""   # keep "" for user site; for project site set to "/REPO_NAME"
+url: "https://dabarbosa10.github.io"
+baseurl: ""              # keep empty for user site
 theme: minima
 
-# Navigation (used by our custom include)
-nav:
-  - title: Home
-    url: /
-  - title: Bio
-    url: /bio/
-  - title: CV
-    url: /cv/
-  - title: Interests
-    url: /interests/
-  - title: AI/ML
-    url: /aiml/
-
-# Blog settings
-permalink: /blog/:year/:month/:day/:title/
 markdown: kramdown
 kramdown:
   input: GFM
-
-# Collections or categories (we’ll use a category called 'aiml')
-# Minima supports categories; we’ll tag posts/pages with 'aiml'
