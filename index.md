@@ -6,6 +6,7 @@ show_title: false
 ---
 
 ##  Presentation
+![Profile](/assets/img/my_profile.jpg)
 
 Hello! 
 
