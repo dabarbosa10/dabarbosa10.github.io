@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blog · Diego Andrés Barbosa Trujillo</title>
+<link rel="stylesheet" href="/site-db/assets/css/theme.css">
+<meta name="theme-color" content="#0b0c10">
+
+</head>
+  <body>
+    <header class="wrap" role="banner" style="display:flex;justify-content:space-between;align-items:center">
+  <a href="/site-db/" style="font-weight:800">Diego Andrés Barbosa Trujillo</a>
+  <nav aria-label="primary" class="main-nav">
+    <a href="/site-db/blog/">Blog</a>
+    <a href="/site-db/about/">About</a>
+  </nav>
+</header>
+
+
+    <main class="wrap"><h1>Blog</h1><div id="tag-filter" class="small" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px">
+    <button type="button" data-tag="all" class="tag">All</button><button type="button" data-tag="ml" class="tag">
+        ml
+      </button><button type="button" data-tag="notes" class="tag">
+        notes
+      </button></div><div style="display:grid;gap:16px">
+  
+  
+
+    
+    
+
+    <article
+      class="card"
+      data-tags="ml notes"
+    >
+      
+        <img class="thumb" src="/site-db/assets/covers/Quark.jpg" alt="Hello, world cover">
+      
+
+      <div>
+        <h3><a href="/site-db/blog/hello-world">Hello, world</a></h3>
+        <div class="meta">
+          Nov 16, 2025 · 1 min read
+        </div>
+        <p>My first dark-and-neon blog post.</p>
+
+        
+          <div class="tags">
+            
+              <span class="tag">ml</span>
+            
+              <span class="tag">notes</span>
+            
+          </div>
+        
+      </div>
+
+      <!-- Make the whole card clickable -->
+      <a class="stretched" href="/site-db/blog/hello-world" aria-label="Hello, world"></a>
+    </article>
+
+  
+
+    
+    
+
+    <article
+      class="card"
+      data-tags=""
+    >
+      
+        <div class="cover thumb" aria-hidden="true"></div>
+      
+
+      <div>
+        <h3><a href="/site-db/blog/welcome-to-jekyll">Welcome to Jekyll!</a></h3>
+        <div class="meta">
+          Nov 15, 2025 · 1 min read
+        </div>
+        <p>You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site ...</p>
+
+        
+      </div>
+
+      <!-- Make the whole card clickable -->
+      <a class="stretched" href="/site-db/blog/welcome-to-jekyll" aria-label="Welcome to Jekyll!"></a>
+    </article>
+
+  
+
+    
+    
+
+    <article
+      class="card"
+      data-tags=""
+    >
+      
+        <div class="cover thumb" aria-hidden="true"></div>
+      
+
+      <div>
+        <h3><a href="/site-db/blog/short">Short</a></h3>
+        <div class="meta">
+          Nov 15, 2025 · 1 min read
+        </div>
+        <p>description: Short teaser for the card.
+tags: [ml, notes]
+cover: /assets/covers/Quark.jpg  # (put any image path or a full URL)
+</p>
+
+        
+      </div>
+
+      <!-- Make the whole card clickable -->
+      <a class="stretched" href="/site-db/blog/short" aria-label="Short"></a>
+    </article>
+
+  
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll("#tag-filter [data-tag]");
+    const cards = document.querySelectorAll(".card[data-tags]");
+
+    if (!buttons.length || !cards.length) return;
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const tag = btn.getAttribute("data-tag");
+
+        // toggle active state
+        buttons.forEach(b => b.classList.remove("active-tag"));
+        btn.classList.add("active-tag");
+
+        cards.forEach(card => {
+          const cardTags = (card.getAttribute("data-tags") || "").split(" ");
+          const match = tag === "all" || cardTags.includes(tag);
+          card.style.display = match ? "" : "none";
+        });
+      });
+    });
+  });
+</script>
+
+
+</main>
+    <footer class="wrap small" role="contentinfo">
+  © 2025 Diego Andrés Barbosa Trujillo · <a href="/site-db/feed.xml">RSS</a>
+</footer>
+
+
+  </body>
+</html>

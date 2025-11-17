@@ -1,0 +1,86 @@
+---
+layout: default
+title: Blog
+---
+
+<h1>Blog</h1>
+
+{%- assign all_tags = site.tags | sort -%}
+{%- if all_tags.size > 0 -%}
+  <div id="tag-filter" class="small" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px">
+    <button type="button" data-tag="all" class="tag">All</button>
+    {%- for tag in all_tags -%}
+      {%- assign tag_name = tag[0] -%}
+      <button type="button" data-tag="{{ tag_name | downcase }}" class="tag">
+        {{ tag_name }}
+      </button>
+    {%- endfor -%}
+  </div>
+{%- endif -%}
+
+<div style="display:grid;gap:16px">
+  {% assign posts_sorted = site.posts | sort: 'date' | reverse %}
+  {% for post in posts_sorted %}
+
+    {% assign chars = post.content | strip_html | size %}
+    {% assign mins = chars | divided_by: 1200 | plus: 1 %}
+
+    <article
+      class="card"
+      data-tags="{% if post.tags %}{{ post.tags | join: ' ' | downcase }}{% endif %}"
+    >
+      {% if post.cover %}
+        <img class="thumb" src="{{ post.cover | relative_url }}" alt="{{ post.title }} cover">
+      {% else %}
+        <div class="cover thumb" aria-hidden="true"></div>
+      {% endif %}
+
+      <div>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <div class="meta">
+          {{ post.date | date: "%b %d, %Y" }} · {{ mins }} min read
+        </div>
+        <p>{{ post.description | default: post.excerpt | strip_html | truncate: 140 }}</p>
+
+        {% if post.tags and post.tags.size > 0 %}
+          <div class="tags">
+            {% for t in post.tags %}
+              <span class="tag">{{ t }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Make the whole card clickable -->
+      <a class="stretched" href="{{ post.url | relative_url }}" aria-label="{{ post.title }}"></a>
+    </article>
+
+  {% endfor %}
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll("#tag-filter [data-tag]");
+    const cards = document.querySelectorAll(".card[data-tags]");
+
+    if (!buttons.length || !cards.length) return;
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const tag = btn.getAttribute("data-tag");
+
+        // toggle active state
+        buttons.forEach(b => b.classList.remove("active-tag"));
+        btn.classList.add("active-tag");
+
+        cards.forEach(card => {
+          const cardTags = (card.getAttribute("data-tags") || "").split(" ");
+          const match = tag === "all" || cardTags.includes(tag);
+          card.style.display = match ? "" : "none";
+        });
+      });
+    });
+  });
+</script>
+
+

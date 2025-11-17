@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<article class="wrap">
+  <h1>{{ page.title }}</h1>
+  <p class="small">{{ page.date | date: "%B %d, %Y" }}</p>
+
+  {{ content }}
+
+  <!-- Dark-theme code styling -->
+  <style>
+    pre, code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    }
+    pre {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--r);
+      padding: var(--s3);
+      overflow: auto;
+    }
+    .hljs, .highlighter-rouge {
+      background: transparent;
+    }
+  </style>
+</article>
